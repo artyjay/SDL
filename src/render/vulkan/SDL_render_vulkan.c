@@ -3762,7 +3762,7 @@ static bool VULKAN_SetCopyState(SDL_Renderer *renderer, const SDL_RenderCommand 
 
     VULKAN_SetupShaderConstants(renderer, cmd, texture, &constants);
 
-    switch (cmd->data.draw.texture_scale_mode) {
+    switch ((VkFilter)cmd->data.draw.texture_scale_mode) {
     case VK_FILTER_NEAREST:
         switch (cmd->data.draw.texture_address_mode) {
         case SDL_TEXTURE_ADDRESS_CLAMP:
